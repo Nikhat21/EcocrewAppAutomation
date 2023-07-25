@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ 
+ <listeners>
+	 <listener class-name="org.ecocrewFramework.TestUtils.Listeners"/>
+			
+ </listeners>
+ 
+ 
+ <test thread-count="5" name="New User raise request Test">
+    <classes>
+      <class name="org.ecocrewFramework.RaisePickupRequestTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test thread-count="5" name="Existing User Test">
+    <classes>
+      <class name="org.ecocrewFramework.ExistingUserTest"/>
+    </classes>
+  </test> <!-- Test -->
+ 
+ 
+ 
+  
+  <test thread-count="5" name="Error Validation Test">
+    <classes>
+      <class name="org.ecocrewFramework.ErrorValidationTest"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+    <test thread-count="5" name="Pickup Address Error Validation Test">
+    <classes>
+      <class name="org.ecocrewFramework.pickupAddressErrorValidationTest"/>
+    </classes>
+  </test> <!-- Test -->
+ 
+
+
+</suite> <!-- Suite -->
