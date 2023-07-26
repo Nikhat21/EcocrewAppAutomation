@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import org.ecocrew.pageobject.android.B2BOrderPage;
 import org.ecocrew.pageobject.android.B2BRecurringOrderPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -28,13 +29,32 @@ public class B2BOrderRecurringTest extends BaseTest{
 		
 		b2bRecurringOrder=new B2BRecurringOrderPage(driver);
 		b2bRecurringOrder.recurringOrder();
-		b2bRecurringOrder.StartsOn();
-		b2bRecurringOrder.repeatEvery("Every 2nd day");
-		b2bRecurringOrder.selectTimeSlot();
-		b2bRecurringOrder.moneyMode("Cash");
+		String userSelectedDate=b2bRecurringOrder.StartsOn();
 		
-		b2bRecurringOrder.confirm();
-		b2bRecurringOrder.recurringPickupDetails();
+		
+		b2bRecurringOrder.repeatEvery("Everyday");
+		String userSelectedTime=b2bRecurringOrder.selectTimeSlot();
+		
+		
+		String userSelectedPayment=b2bRecurringOrder.moneyMode("Cash");
+		
+		 b2bRecurringOrder.confirm();
+		 
+	     String pickupDetailDate=b2bRecurringOrder.recurringPickupDetails();
+		 Assert.assertTrue(pickupDetailDate.equalsIgnoreCase(userSelectedDate));
+		 
+		 
+		 String pickupDetailTime=b2bRecurringOrder.pickupdetailTime();
+		  Assert.assertTrue(pickupDetailTime.equalsIgnoreCase(userSelectedTime));
+		 
+		 
+		 System.out.println("Details" +pickupDetailTime);
+		 System.out.println("user" +userSelectedTime);
+		 
+		 
+		 String pickupDetailPayment=b2bRecurringOrder.pickupdetailpaymentMode();
+		 
+		Assert.assertTrue(pickupDetailPayment.equalsIgnoreCase(userSelectedPayment));
 				
 		
 //		LocalDate localDate = LocalDate.now();

@@ -60,6 +60,9 @@ public class B2BRecurringOrderPage {
 	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupTimeslot'])")
 	List<WebElement> PickupTimeslot;
 	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupSelectTime']/android.widget.TextView")
+	private WebElement timeSlotText;
+	
 	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringOrderSelectMoneyAcceptance']")
 	private WebElement SelectMoneyAcceptance;
@@ -103,7 +106,7 @@ public class B2BRecurringOrderPage {
 	private WebElement time;
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BOrderDetailsMoneyAccMode']")
-	private WebElement cash;
+	private WebElement paymentMode;
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BOrderDetailsPickupAddress']")
 	private WebElement address;
@@ -131,14 +134,27 @@ public class B2BRecurringOrderPage {
 		String startson=dateText.getText();
 		System.out.println("startson " +startson);
 		String string = startson;
+		
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("d MMM yyyy");	           
         LocalDate date = LocalDate.parse(string, format);
 	    String aa=date.toString();
         System.out.println(aa);
+        
         String date1 =  LocalDate.parse( aa ).format(DateTimeFormatter.ofPattern( "dd-MM-uuuu" ));
         System.out.println(date1);	
         
-		return date1;
+        
+        java.time.DayOfWeek dayOfWeek = date.getDayOfWeek();
+        
+        String day=dayOfWeek.toString();
+        System.out.println("Day of week in text:"+day);
+        
+       String dateDay=date1.concat(", "+day);
+       
+       System.out.println("Day of week in text:"+dateDay);
+       
+       
+		return dateDay;
 	}
 	
 	
@@ -167,9 +183,20 @@ public class B2BRecurringOrderPage {
 	}
 	
 	
-	public void selectTimeSlot() {
+	public String selectTimeSlot() {
 		Selectatimeslot.click();
-		PickupTimeslot.get(1).click();
+		PickupTimeslot.get(0).click();
+		String timeText=timeSlotText.getText();
+		String userTime=timeText.substring(0,timeText.lastIndexOf("("));
+		
+		System.out.println(userTime);
+		if(userTime.contains(" ")) {
+			userTime = userTime.replace(" ", "");
+			System.out.println(userTime);
+     	   
+        }
+		return userTime;
+		
 	}
 	
 	public String moneyMode(String paymentMode) throws InterruptedException {
@@ -204,6 +231,25 @@ public class B2BRecurringOrderPage {
 		System.out.println("pickupdetailsDate " +pickupdetailsDate);
 		return pickupdetailsDate;
 	}
+	
+	public String pickupdetailTime() {
+		String pickupdetailsTime=time.getText();
+		if(pickupdetailsTime.contains(" ")) {
+			pickupdetailsTime = pickupdetailsTime.replace(" ", "");
+			System.out.println("pickupdetailsTime " +pickupdetailsTime);
+
+        }
+		return pickupdetailsTime;
+	}
+	
+	
+	public String pickupdetailpaymentMode() {
+		String pickupdetailsTime=paymentMode.getText();
+		System.out.println("pickupdetailspaymentMode " +paymentMode);
+		return pickupdetailsTime;
+	}
+	
+	
 	
 	
 }
