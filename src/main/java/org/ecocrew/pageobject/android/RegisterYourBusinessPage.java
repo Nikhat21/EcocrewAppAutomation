@@ -116,13 +116,18 @@ public class RegisterYourBusinessPage extends AndroidAction {
 		RegisterNow.click();
 	}
 	
-	public void businessDetails() {
+	public String enterBusinessName(String busName) {
 		scrollToText("Enter business location");
-
-		enterBusinessName.sendKeys("Test");
-		enterGSTNumber.sendKeys("Test");
-		
+		enterBusinessName.sendKeys(busName);
+		return busName;
+				
 	}
+	
+	public void enterGST(String gst) {
+		enterGSTNumber.sendKeys(gst);
+	}
+	
+	
 	public void uploadImages() throws InterruptedException {
 		businessUploadImages.click();
 		businessLaunchCamera.click();

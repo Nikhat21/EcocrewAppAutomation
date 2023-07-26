@@ -14,8 +14,11 @@ public class B2BOrderRecurringTest extends BaseTest{
 	B2BOrderPage b2border;
 	B2BRecurringOrderPage b2bRecurringOrder;
 	
+	String businessorderPlacedMsg="Recurring pickup request placed \n successfully!!";
+	
+	
 	@Test(dataProvider="getData")
-	public void b2bRecurringOrder(String MobileNumber,String otp) throws InterruptedException {
+	public void b2bRecurringOrder(String MobileNumber,String otp,String repeat,String payment) throws InterruptedException {
 		loginPage=new NewUserLoginPage(driver);
 		loginPage.welcomeScreens();
 		loginPage.inputField(MobileNumber);
@@ -23,7 +26,6 @@ public class B2BOrderRecurringTest extends BaseTest{
 		
 		
 		b2border=new B2BOrderPage(driver);
-		
 		b2border.switchProfileLink();
 		b2border.b2bOrder();
 		
@@ -31,42 +33,42 @@ public class B2BOrderRecurringTest extends BaseTest{
 		b2bRecurringOrder.recurringOrder();
 		String userSelectedDate=b2bRecurringOrder.StartsOn();
 		
-		
-		b2bRecurringOrder.repeatEvery("Everyday");
+		b2bRecurringOrder.repeatEvery(repeat);
 		String userSelectedTime=b2bRecurringOrder.selectTimeSlot();
+		String userSelectedPayment=b2bRecurringOrder.moneyMode(payment);
 		
-		
-		String userSelectedPayment=b2bRecurringOrder.moneyMode("Cash");
-		
-		 b2bRecurringOrder.confirm();
+		b2bRecurringOrder.confirm();
 		 
-	     String pickupDetailDate=b2bRecurringOrder.recurringPickupDetails();
-		 Assert.assertTrue(pickupDetailDate.equalsIgnoreCase(userSelectedDate));
+		String requestPlacedMessage=b2bRecurringOrder.successMessage();
+		Assert.assertEquals(requestPlacedMessage, businessorderPlacedMsg);
 		 
 		 
-		 String pickupDetailTime=b2bRecurringOrder.pickupdetailTime();
-		  Assert.assertTrue(pickupDetailTime.equalsIgnoreCase(userSelectedTime));
+		b2bRecurringOrder.backToHome();
+		 
+	    String pickupDetailDate=b2bRecurringOrder.recurringPickupDetails();
+		Assert.assertTrue(pickupDetailDate.equalsIgnoreCase(userSelectedDate));
 		 
 		 
-		 System.out.println("Details" +pickupDetailTime);
-		 System.out.println("user" +userSelectedTime);
+		String pickupDetailTime=b2bRecurringOrder.pickupdetailTime();
+		Assert.assertTrue(pickupDetailTime.equalsIgnoreCase(userSelectedTime));
 		 
 		 
-		 String pickupDetailPayment=b2bRecurringOrder.pickupdetailpaymentMode();
+		System.out.println("Details" +pickupDetailTime);
+		System.out.println("user" +userSelectedTime);
+		 
+		 
+		String pickupDetailPayment=b2bRecurringOrder.pickupdetailpaymentMode();
 		 
 		Assert.assertTrue(pickupDetailPayment.equalsIgnoreCase(userSelectedPayment));
 				
+		b2bRecurringOrder.cancelBusinessOrder();
 		
-//		LocalDate localDate = LocalDate.now();
-//		System.out.println("Current Date: "+localDate);
-//		// Add Weeks
-//		LocalDate newLocalDate = localDate.plusDays(1);
-//		System.out.println("Date After incrementing a Day: "+newLocalDate);
+
 	}
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"7142425093" , "1234"} };
+		return new Object[][] { {"7142425093" , "1234" , "Everyday" , "Google Pay"} };
 	}
 	
 }

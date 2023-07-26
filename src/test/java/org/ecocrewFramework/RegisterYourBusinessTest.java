@@ -21,7 +21,8 @@ public class RegisterYourBusinessTest extends BaseTest{
 		
 		registerbusiness=new RegisterYourBusinessPage(driver);		
 		registerbusiness.registerYourBusinessButton();
-		registerbusiness.businessDetails();
+		registerbusiness.enterBusinessName("Tst");
+		registerbusiness.enterGST("12444");
 		registerbusiness.uploadImages();
 		registerbusiness.businessLocation();
 		registerbusiness.search();
@@ -39,7 +40,12 @@ public class RegisterYourBusinessTest extends BaseTest{
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"7142425293", "1234"}};
+		return new Object[][] { {"8282828282", "1234"}};
 	}
+	
+	
+	
+	
+	
 	
 }

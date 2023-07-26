@@ -61,7 +61,7 @@ public class NewUserLoginCompleteProfileTest extends BaseTest{
 		
 	@DataProvider
 	public Object[][] getDataCompleteProfile(){
-		return new Object[][] { {"9442787222" , "1234"} };
+		return new Object[][] { {"9142787222" , "1234"} };
 	}
 	
 

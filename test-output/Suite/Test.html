@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>4/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 25 10:07:20 IST 2023</td>
+<td>Started on:</td><td>Wed Jul 26 11:57:48 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>307 seconds (307732 ms)</td>
+<tr><td>Total time:</td><td>306 seconds (306171 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>Smoke </td>
 </tr><tr>
@@ -67,101 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='org.ecocrewFramework.NewUserLoginCompleteProfileTest.loginCompleteProfile()'><b>loginCompleteProfile</b><br>Test class: org.ecocrewFramework.NewUserLoginCompleteProfileTest<br>Parameters: 9442787222, 1234</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.view.ViewGroup[@content-desc=&apos;ecocrew.EcoCoinViewGoToLedger&apos;]/android.widget.TextView&apos; is not linked to the same object in DOM anymore
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [b5d0eae0-4723-4883-8478-d44a643b5ce3, getElementText {id=00000000-0000-0402-ffff-ffff00000357}]
-Capabilities {appium:app: D:\eco-workspace\EcocrewFra..., appium:appPackage: com.ecocrew.app.sit, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: D:\eco-workspace\EcocrewFra..., automationName: UIAutomator2, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A305F, appium:deviceName: RZ8M31TM5PJ, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZ8M31TM5PJ, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.625, appium:platformVersion: 11, appium:statBarHeight: 83, appium:takesScreenshot: true, appium:viewportRect: {height: 2048, left: 0, top: 83, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (b5d0eae0-4723-4883-8478-d44a643b5ce3)] -&gt; xpath: //android.view.ViewGroup[@content-desc=&apos;ecocrew.EcoCoinViewGoToLedger&apos;]/android.widget.TextView]
-Session ID: b5d0eae0-4723-4883-8478-d44a643b5ce3
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
-	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
-	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.getText(&lt;generated&gt;)
-	at org.ecocrew.pageobject.android.ProfilePage.verfiyfiftyecocoins(ProfilePage.java:187)
-	at org.ecocrewFramework.NewUserLoginCompleteProfileTest.loginCompleteProfile(NewUserLoginCompleteProfileTest.java:43)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace812609309", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace812609309'><pre>org.openqa.selenium.StaleElementReferenceException: The element &apos;By.xpath: //android.view.ViewGroup[@content-desc=&apos;ecocrew.EcoCoinViewGoToLedger&apos;]/android.widget.TextView&apos; is not linked to the same object in DOM anymore
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;11.0.18&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Command: [b5d0eae0-4723-4883-8478-d44a643b5ce3, getElementText {id=00000000-0000-0402-ffff-ffff00000357}]
-Capabilities {appium:app: D:\eco-workspace\EcocrewFra..., appium:appPackage: com.ecocrew.app.sit, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: D:\eco-workspace\EcocrewFra..., automationName: UIAutomator2, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: samsung, appium:deviceModel: SM-A305F, appium:deviceName: RZ8M31TM5PJ, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RZ8M31TM5PJ, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.625, appium:platformVersion: 11, appium:statBarHeight: 83, appium:takesScreenshot: true, appium:viewportRect: {height: 2048, left: 0, top: 83, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Element: [[AndroidDriver:  on ANDROID (b5d0eae0-4723-4883-8478-d44a643b5ce3)] -&gt; xpath: //android.view.ViewGroup[@content-desc=&apos;ecocrew.EcoCoinViewGoToLedger&apos;]/android.widget.TextView]
-Session ID: b5d0eae0-4723-4883-8478-d44a643b5ce3
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:192)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at io.appium.java_client.pagefactory.ElementInterceptor.getObject(ElementInterceptor.java:40)
-	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:60)
-	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.getText(&lt;generated&gt;)
-	at org.ecocrew.pageobject.android.ProfilePage.verfiyfiftyecocoins(ProfilePage.java:187)
-	at org.ecocrewFramework.NewUserLoginCompleteProfileTest.loginCompleteProfile(NewUserLoginCompleteProfileTest.java:43)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
-	at org.testng.TestRunner.privateRun(TestRunner.java:766)
-	at org.testng.TestRunner.run(TestRunner.java:587)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
-	at org.testng.TestNG.runSuites(TestNG.java:1039)
-	at org.testng.TestNG.run(TestNG.java:1007)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>51</td>
-<td>org.ecocrewFramework.NewUserLoginCompleteProfileTest@2bb3058</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -170,19 +75,24 @@ Session ID: b5d0eae0-4723-4883-8478-d44a643b5ce3
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='org.ecocrewFramework.NewUserLoginCompleteProfileTest.loginCompleteProfile()'><b>loginCompleteProfile</b><br>Test class: org.ecocrewFramework.NewUserLoginCompleteProfileTest<br>Parameters: 9142787222, 1234</td>
+<td></td>
+<td>55</td>
+<td>org.ecocrewFramework.NewUserLoginCompleteProfileTest@2bb3058</td></tr>
+<tr>
 <td title='org.ecocrewFramework.ErrorValidationTest.loginErrorValidation()'><b>loginErrorValidation</b><br>Test class: org.ecocrewFramework.ErrorValidationTest<br>Parameters: 8197120</td>
 <td></td>
 <td>13</td>
 <td>org.ecocrewFramework.ErrorValidationTest@60df60da</td></tr>
 <tr>
-<td title='org.ecocrewFramework.RaisePickupRequestTest.raisePickupRequest()'><b>raisePickupRequest</b><br>Test class: org.ecocrewFramework.RaisePickupRequestTest<br>Parameters: 7184620714, 1234</td>
+<td title='org.ecocrewFramework.RaisePickupRequestTest.raisePickupRequest()'><b>raisePickupRequest</b><br>Test class: org.ecocrewFramework.RaisePickupRequestTest<br>Parameters: 7184520714, 1234</td>
 <td></td>
 <td>99</td>
 <td>org.ecocrewFramework.RaisePickupRequestTest@7a362b6b</td></tr>
 <tr>
-<td title='org.ecocrewFramework.RegisterYourBusinessTest.registerYourBusiness()'><b>registerYourBusiness</b><br>Test class: org.ecocrewFramework.RegisterYourBusinessTest<br>Parameters: 7142425293, 1234</td>
+<td title='org.ecocrewFramework.RegisterYourBusinessTest.registerYourBusiness()'><b>registerYourBusiness</b><br>Test class: org.ecocrewFramework.RegisterYourBusinessTest<br>Parameters: 7142425290, 1234</td>
 <td></td>
-<td>80</td>
+<td>81</td>
 <td>org.ecocrewFramework.RegisterYourBusinessTest@5a2d131d</td></tr>
 </table><p>
 </body>

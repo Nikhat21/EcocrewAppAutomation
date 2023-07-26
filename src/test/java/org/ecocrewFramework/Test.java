@@ -17,7 +17,7 @@ import org.apache.commons.lang3.time.DateUtils;
 public class Test {
 	
 	public static void main(String[] args) {
-		 String string = "25 Jul 2023";
+		 String string = "26 Jul 2023";
 		 
 //		 Date date = new Date();
 //		 Date nextDate = DateUtils.addDays(date, 1);
@@ -48,7 +48,14 @@ public class Test {
 	           }
 	          
 	            
-	          
+//	   		LocalDate localDate = LocalDate.now();
+//	   		System.out.println("Current Date: "+localDate);
+	   		// Add Weeks
+	   		LocalDate newLocalDate = date.plusDays(1);
+	   		System.out.println("Date After incrementing a Day: "+newLocalDate);
+	           
+	           
+	           
 	           // ("d MMM yyyy"); 
 	            
 	       

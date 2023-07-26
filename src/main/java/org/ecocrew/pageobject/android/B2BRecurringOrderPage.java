@@ -79,6 +79,11 @@ public class B2BRecurringOrderPage {
 	private WebElement RecurringOrderConfirmPickup;
 	
 	
+	
+	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BPickupConfirmedSuccessText']")
+	private WebElement ConfirmedSuccessText;
+	
+	
 	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='ecocrew.B2BPickupConfirmedBackToHome']")
 	private WebElement ConfirmedBackToHome;
 	
@@ -94,8 +99,20 @@ public class B2BRecurringOrderPage {
 	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='ecocrew.B2BOrderDetailsRecurringModelButton']")
 	private WebElement Confirmcancellation;
 	
+	
+	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BOrderDetailAreYouSureCancel']")
+	private WebElement sureCancelButton;
+	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BOrderDetailsOkay']")
+	private WebElement okayButton;
+	
+	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BOrderDetailsGoBack']")
 	private WebElement GoBack;
+	
+	
+	
 	
 	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BOrderDetailsDate']")
@@ -219,11 +236,18 @@ public class B2BRecurringOrderPage {
 		
 	}
 	
-	public void confirm() {
+	public void confirm() throws InterruptedException {
 		RecurringOrderConfirmPickup.click();
+		Thread.sleep(1000);
+		
+	}
+	
+	
+	public void backToHome() {
 		ConfirmedBackToHome.click();
 		recurringViewOrderDetails.click();
 	}
+	
 	
 	
 	public String recurringPickupDetails() {
@@ -249,6 +273,22 @@ public class B2BRecurringOrderPage {
 		return pickupdetailsTime;
 	}
 	
+	
+	public String successMessage() {
+		String orderPlacedMessage=ConfirmedSuccessText.getText();
+		System.out.println("orderPlacedMessage" +orderPlacedMessage);
+		return orderPlacedMessage;
+	}
+	
+	
+	
+	public void cancelBusinessOrder() {
+		OrderDetailsCancelPickup.click();
+		cancelRecurringRadiobutton.get(1).click();
+		Confirmcancellation.click();
+		sureCancelButton.click();
+		okayButton.click();
+	}
 	
 	
 	

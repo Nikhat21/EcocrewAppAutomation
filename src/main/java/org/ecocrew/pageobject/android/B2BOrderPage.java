@@ -80,6 +80,14 @@ public class B2BOrderPage {
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BOrderTrackingViewOrder']")
 	private WebElement viewOrderDetails;
 	
+	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BOrderTrackingViewOrder']/android.widget.TextView")
+	private WebElement viewOrderDetailsText;
+	
+	
+	
+	
+	
 	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='ecocrew.B2BOrderDetailsEditPickup']")
 	private WebElement editPickup;
 	
@@ -108,6 +116,20 @@ public class B2BOrderPage {
 	public void switchProfileLink() {
 		homeSwitchProfile.click();
 	}
+	
+	public void viewBusinessOrderDetails() {
+		viewOrderDetails.click();
+	}
+	
+	public void orderDetails() {
+		String viewOrder=viewOrderDetailsText.getText();
+		if (viewOrder.equals("View order details")) {
+			
+		}
+	}
+	
+	
+	
 	
 	public void b2bOrder() {
 		b2bpickupRequest.click();

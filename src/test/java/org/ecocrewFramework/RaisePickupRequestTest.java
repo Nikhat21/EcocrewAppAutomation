@@ -110,6 +110,6 @@ public class RaisePickupRequestTest extends BaseTest {
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"7184620714", "1234"}};
+		return new Object[][] { {"7184520714", "1234"}};
 	}
 }
