@@ -37,34 +37,17 @@ public class BaseTest extends AppiumUtils{
 		String port=prop.getProperty("port");
 				
 	service = startAppiumServer(ipAddress,Integer.parseInt(port));
+				
+	UiAutomator2Options options=new UiAutomator2Options();
+	options.setDeviceName(prop.getProperty("AndroidDeviceNames"));
+	System.out.println(prop.getProperty("AndroidDeviceNames"));
+	options.setApp("D:\\automationProjects\\src\\test\\java\\resources\\ecocrewuserapp.apk");
+	//options.setApp(System.getProperty("user.dir")+ "\\src\\test\\java\\resources\\ecocrewuserapp.apk");
+	 driver = new AndroidDriver(service.getUrl(), options);
 		
-//		 service=new AppiumServiceBuilder().withAppiumJS(new File("C:\\Users\\HP-PC\\AppData\\Roaming\\npm\\node_modules\\appium\\lib\\main.js"))
-//				.withIPAddress("127.0.0.1").usingPort(4723).build();
-					//service.start();
-//				UiAutomator2Options options=new UiAutomator2Options();
-//				options.setDeviceName(prop.getProperty("AndroidDeviceNames"));
-//				options.setApp("D:\\eco-workspace\\EcocrewFramework\\src\\test\\java\\org\\ecocrewFramework\\resources\\ecocrewuserapp.apk");
-//				 driver = new AndroidDriver(service.getUrl(), options);
-
-				// driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-		
-		UiAutomator2Options options=new UiAutomator2Options();
-		options.setDeviceName("AndroidDeviceNames");
-		options.setApp("D:\\eco-workspace\\EcocrewFramework\\src\\test\\java\\resources\\ecocrewuserapp.apk");
-		//options.setApp("D:\\ecocrew-workspace\\Ecocrew\\src\\test\\java\\resources\\pickupApp.apk");
-		
-		driver = new AndroidDriver(service.getUrl(), options);
-	//	 driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
-		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-		
-		
-		
-		
-		
-		
-		
-		
-				 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+	
+		// driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));			
 	}
 	
 	@AfterClass

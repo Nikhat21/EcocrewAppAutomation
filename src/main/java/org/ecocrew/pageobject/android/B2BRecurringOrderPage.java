@@ -3,7 +3,9 @@ package org.ecocrew.pageobject.android;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.NoSuchElementException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
@@ -63,6 +65,12 @@ public class B2BRecurringOrderPage {
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupSelectTime']/android.widget.TextView")
 	private WebElement timeSlotText;
 	
+//	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupTimeslot'])/android.widget.TextView")
+//	private WebElement timeSlotFullText;
+	
+
+	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupTimeslot'])/android.view.ViewGroup/android.widget.TextView")
+	private WebElement timeSlotFullText;	
 	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringOrderSelectMoneyAcceptance']")
 	private WebElement SelectMoneyAcceptance;
@@ -112,9 +120,6 @@ public class B2BRecurringOrderPage {
 	private WebElement GoBack;
 	
 	
-	
-	
-	
 	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BOrderDetailsDate']")
 	private WebElement date;
 	
@@ -129,11 +134,33 @@ public class B2BRecurringOrderPage {
 	private WebElement address;
 	
 	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BOrderDetailsExeName']")
-	private WebElement pickupexecutinename;
 	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@content-desc='ecocrew.B2BOrderDetailsExeNumber']")
-	private WebElement pickupexecutinenumber;
+	
+	
+	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupTimeslot'])/android.widget.TextView")
+	private WebElement timeslots;
+	
+	
+	
+	//Validation error message
+	
+	
+	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupShowDatePicker'])[2]/android.widget.TextView")
+	private WebElement pleaseSelectDate;
+	
+	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupRepeatsEveryError']/android.widget.TextView")
+	private WebElement pleaseSelectRepeat;
+	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRecurringPickupSelectTimeError']/android.widget.TextView")
+	private WebElement pleaseSelectTime;
+
+	
+	
+
+
+	
+	
 	
 	public void screenBusinessName() {
 		String busName=businessName.getText();
@@ -159,19 +186,14 @@ public class B2BRecurringOrderPage {
         
         String date1 =  LocalDate.parse( aa ).format(DateTimeFormatter.ofPattern( "dd-MM-uuuu" ));
         System.out.println(date1);	
-        
-        
         java.time.DayOfWeek dayOfWeek = date.getDayOfWeek();
         
         String day=dayOfWeek.toString();
         System.out.println("Day of week in text:"+day);
-        
-       String dateDay=date1.concat(", "+day);
+        String dateDay=date1.concat(", "+day);
        
-       System.out.println("Day of week in text:"+dateDay);
-       
-       
-		return dateDay;
+        System.out.println("Day of week in text:"+dateDay);
+        return dateDay;
 	}
 	
 	
@@ -200,22 +222,78 @@ public class B2BRecurringOrderPage {
 	}
 	
 	
-	public String selectTimeSlot() {
-		Selectatimeslot.click();
+	public String selectTimeSlot() throws InterruptedException {
+		Selectatimeslot.click();	
+		String userTime=null;
 		PickupTimeslot.get(0).click();
 		String timeText=timeSlotText.getText();
-		String userTime=timeText.substring(0,timeText.lastIndexOf("("));
-		
+		userTime=timeText.substring(0,timeText.lastIndexOf("("));
+
 		System.out.println(userTime);
 		if(userTime.contains(" ")) {
 			userTime = userTime.replace(" ", "");
 			System.out.println(userTime);
      	   
         }
-		return userTime;
 		
+//		try {
+//			String str1=timeslots.getText();
+//			String str2=timeSlotFullText.getText();
+//
+//			System.out.println("========" +str1);
+//			System.out.println("-------" +str2);
+//			
+//			String str3=str1.concat(str2);
+//			System.out.println("----+++++---" +str3);
+//			if(str3.contains("Slot full"))
+//			{
+//				PickupTimeslot.get(1).click();
+//				//Thread.sleep(2000);
+//				String timeText=timeSlotText.getText();
+//				 userTime=timeText.substring(0,timeText.lastIndexOf("("));
+//
+//				System.out.println(userTime);
+//				if(userTime.contains(" ")) {
+//					userTime = userTime.replace(" ", "");
+//					System.out.println(userTime);
+//		     	   
+//		        }
+//				
+//			}else 
+//			{
+//			PickupTimeslot.get(0).click();
+//			String timeText=timeSlotText.getText();
+//			userTime=timeText.substring(0,timeText.lastIndexOf("("));
+//
+//			System.out.println(userTime);
+//			if(userTime.contains(" ")) {
+//				userTime = userTime.replace(" ", "");
+//				System.out.println(userTime);
+//	     	   
+//	        }
+//			
+//			}
+//		}
+//		catch(NoSuchElementException e) {
+//			 e.printStackTrace();
+//		}
+//		finally {
+//			PickupTimeslot.get(0).click();
+//
+//			String timeText=timeSlotText.getText();
+//			 userTime=timeText.substring(0,timeText.lastIndexOf("("));
+//
+//			System.out.println(userTime);
+//			if(userTime.contains(" ")) {
+//				userTime = userTime.replace(" ", "");
+//				System.out.println(userTime);
+//	     	   
+//	        }
+//		}
+		return userTime;
 	}
-	
+		
+			
 	public String moneyMode(String paymentMode) throws InterruptedException {
 		SelectMoneyAcceptance.click();		
 		String paymentList = null;
@@ -291,5 +369,27 @@ public class B2BRecurringOrderPage {
 	}
 	
 	
+	
+	public String getStartOnErrorMessage() {
+		String dateErrorMessage=pleaseSelectDate.getText();
+		System.out.println(dateErrorMessage);
+		return dateErrorMessage;
+		}
+	
+	
+	public String getRepeatsEveryMessage() {
+		String repeatsMessage=pleaseSelectRepeat.getText();
+		
+		System.out.println(repeatsMessage);
+		return repeatsMessage;
+		}
+	
+	public String getTimeErrorMessage() {
+		String timeerrorMessage=pleaseSelectTime.getText();
+		System.out.println(timeerrorMessage);
+
+		return timeerrorMessage;
+		}
+
 	
 }

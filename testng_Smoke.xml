@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	
+	
 	<groups>
 		<run>
 			<include name="Smoke"/>
@@ -13,24 +14,38 @@
 			
  </listeners>  
  
- 
+	
   <test thread-count="5" name="Test">
     <classes>
+		 <class name="org.ecocrewFramework.NewUserLoginCompleteProfileTest"/>
+	<class name="org.ecocrewFramework.RaisePickupRequestTest"/>
+	
+	 <class name="org.ecocrewFramework.EditOrderDetailsTest"/>
       <class name="org.ecocrewFramework.DiscardProfileTest"/>
-    
+      <class name="org.ecocrewFramework.CancelPickupOrderTest"/>
+      <class name="org.ecocrewFramework.CompleteYourProfileTest"/>
+      <class name="org.ecocrewFramework.ErrorValidationTest"/>
      
-      <class name="org.ecocrewFramework.NewUserLoginCompleteProfileTest"/>    
+     <class name="org.ecocrewFramework.RegisterYourBusinessTest"/>
      
-      <class name="org.ecocrewFramework.RaisePickupRequestTest"/>
+      <class name="org.ecocrewFramework.BaseTest"/>
+      <class name="org.ecocrewFramework.B2BOrderRecurringTest"/>
+     
+      <class name="org.ecocrewFramework.B2BOrderTest"/>
+   
       <class name="org.ecocrewFramework.EditAddressTest"/>
+      <class name="org.ecocrewFramework.admin.RegisterYourBusinessAdminTest"/>
       <class name="org.ecocrewFramework.RaiseContributionErrorValidationTest"/>
       <class name="org.ecocrewFramework.savedAddressesTest"/>
-      <class name="org.ecocrewFramework.ErrorValidationTest"/>  
-      <class name="org.ecocrewFramework.DeleteAddressTest"/>
      
-      <class name="org.ecocrewFramework.RegisterYourBusinessTest"/>
-      <class name="org.ecocrewFramework.AccountSettingTest"/>    
+      <class name="org.ecocrewFramework.pickupAddressErrorValidationTest"/>
+      <class name="org.ecocrewFramework.DeleteAddressTest"/>
+      <class name="org.ecocrewFramework.TestUtils.BaseTest"/>
+      <class name="org.ecocrewFramework.admin.BusinessOrderDetailsTest"/>
+      
+      <class name="org.ecocrewFramework.AccountSettingTest"/>
       <class name="org.ecocrewFramework.ExistingUserTest"/>
+      <class name="org.ecocrewFramework.ViewOrderDetailsTest"/>
       <class name="org.ecocrewFramework.NewUserLoginIncompleteProfileTest"/>
     </classes>
   </test> <!-- Test -->

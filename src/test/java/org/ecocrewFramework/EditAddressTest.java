@@ -15,6 +15,7 @@ import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.ProfilePage;
 import org.ecocrew.pageobject.android.RaiseContributionRequestPage;
 import org.ecocrew.pageobject.android.RaisePickupRequestPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.openqa.selenium.By;
 
 public class EditAddressTest extends BaseTest{
@@ -33,17 +34,18 @@ public class EditAddressTest extends BaseTest{
 		loginPage.verifyOTP(OTP);
 		raiseRequest=new RaisePickupRequestPage(driver);		
 		raiseRequest.createOrder();
-		raiseRequest.openCameraNewUser();
-		
+		//raiseRequest.openCameraNewUser();
+		raiseRequest.mobCamera();
 		addAddress = new AddAddressPage(driver);
 		//addAddress.pickupAddresss();
 		
 		editaddress=new EditAddressPage(driver);
 		editaddress.addressChange();
-
-		editaddress.editAdd("Work");
-		Thread.sleep(2000);
+		
+		editaddress.editAdd("Home");
 		editaddress.pickAddressUpdate();
+		Thread.sleep(2000);
+		
 		editaddress.landmarkField("Reliance mart");	
 		//addAddress.useSavedAddress();
 	}
@@ -51,7 +53,7 @@ public class EditAddressTest extends BaseTest{
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"8197125150", "1234"}};
+		return new Object[][] { {"5584920917", "1234"}};
 	}
 	
 //	@DataProvider

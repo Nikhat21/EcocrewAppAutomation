@@ -2,6 +2,7 @@ package org.ecocrewFramework;
 
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.RegisterYourBusinessPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,7 +18,7 @@ public class RegisterYourBusinessTest extends BaseTest{
 	  	loginPage.welcomeScreens();	
 		loginPage.inputField(mobileNumber);
 		loginPage.verifyOTP(OTP);	
-		loginPage.surveyScreen();
+		//loginPage.surveyScreen();
 		
 		registerbusiness=new RegisterYourBusinessPage(driver);		
 		registerbusiness.registerYourBusinessButton();
@@ -40,7 +41,7 @@ public class RegisterYourBusinessTest extends BaseTest{
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"8282828282", "1234"}};
+		return new Object[][] { {"7142425093", "1234"}};
 	}
 	
 	

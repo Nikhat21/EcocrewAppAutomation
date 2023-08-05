@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="org.ecocrewFramework.B2BOrderRecurringTest">
+      <class name="org.ecocrewFramework.RaisePickupRequestTest">
         <methods>
           <include name="tearDown"/>
+          <include name="raisePickupRequest"/>
           <include name="configureAppium"/>
-          <include name="b2bRecurringOrder" invocation-numbers="0"/>
         </methods>
-      </class> <!-- org.ecocrewFramework.B2BOrderRecurringTest -->
+      </class> <!-- org.ecocrewFramework.RaisePickupRequestTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.ProfilePage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.openqa.selenium.By;
 
 public class DiscardProfileTest extends BaseTest{

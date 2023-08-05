@@ -25,7 +25,7 @@ public class AddAddressPage extends AndroidAction {
 	@AndroidFindBy(id = "com.android.permissioncontroller:id/permission_allow_foreground_only_button")
 	private WebElement address_Whileusingtheapp;
 
-	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.AddPickupAddressUseSavedAddress']")
+	@AndroidFindBy(xpath = "(//android.view.ViewGroup[@content-desc='ecocrew.AddPickupAddressUseSavedAddress'])")
 	private WebElement searchPickupAddress;
 
 	@AndroidFindBy(xpath = "//android.widget.EditText[@content-desc='ecocrew.AddPickupAddressSearchKey']")
@@ -92,10 +92,7 @@ public class AddAddressPage extends AndroidAction {
 		Thread.sleep(3000);
 		addPickupAddress.get(1).click();
 
-//		for(WebElement option : addPickupAddress) {
-//			System.out.println("Values are = " + option.getText());
-//			addPickupAddress.get(1).click();
-//		}
+
 		
 		enterCompleteAddress.click();
 		for(WebElement option : addAddressTags) {
@@ -105,9 +102,18 @@ public class AddAddressPage extends AndroidAction {
 		pickupAddressInput.sendKeys(buildingName);
 	    Boolean defaultcheckbox = saveAddressCheckbox.isSelected();
 		System.out.println("sav checkbox:" +defaultcheckbox);
-		confirm.click();
-		// useThis.click();
+	
+		
 	}
+	
+	
+	public void confirmAddress() {
+		scrollToText("Confirm");
+		confirm.click();
+	}
+	
+	
+	
 	
 	public String getAddAddressPickpup() {
 		String addAddressErrorMessage = addressRequiredError.getText();
@@ -122,11 +128,23 @@ public class AddAddressPage extends AndroidAction {
 		
 	}
 }
+     
+      public void addressTabsClick(String tabs) {
+    	  String listTabs=null;
+    	  for(int i=0;i<addAddressTags.size();i++) {
+    		  
+    		   listTabs=addAddressTags.get(i).getText();
+    		  System.out.println(listTabs);
+    	  
+    	 if(listTabs.equalsIgnoreCase(tabs)) {
+    		 addAddressTags.get(i).click();
+    		      	  
+    	 }
+    	 
+    	  }
+    	  
+      }
       
-      
-//      public void useSavedAddress() {
-//  		useThis.click();
-//  	}
       
       public String getSavedTabLabel(String tabs) throws InterruptedException {
     	  String label = null;

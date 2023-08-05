@@ -41,6 +41,11 @@ public class RegisterYourBusinessPage extends AndroidAction {
 	@AndroidFindBy(xpath = "//android.widget.EditText[@content-desc='ecocrew.B2BRegisterScreenBusinessGstNumber']")
 	private WebElement enterGSTNumber;
 
+	
+	@AndroidFindBy(xpath = "//android.widget.EditText[@content-desc='ecocrew.B2BRegisterScreenBusinessReferralCode']")
+	private WebElement businessReferralCode;
+	
+	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRegisterScreenBusinessUploadImages']")
 	private WebElement businessUploadImages;
 	
@@ -115,6 +120,11 @@ public class RegisterYourBusinessPage extends AndroidAction {
 		scrollToText("Register now");
 		RegisterNow.click();
 	}
+	
+	public void RegisterNowClick() {
+		RegisterNow.click();
+	}
+	
 	
 	public String enterBusinessName(String busName) {
 		scrollToText("Enter business location");

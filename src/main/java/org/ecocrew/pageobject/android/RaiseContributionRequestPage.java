@@ -76,7 +76,7 @@ public class RaiseContributionRequestPage extends AndroidAction {
 
 	// Select date
 
-	@AndroidFindBy(xpath = "//android.view.View[@content-desc='28 July 2023']")
+	@AndroidFindBy(xpath = "//android.view.View[@content-desc='02 August 2023']")
 	private WebElement otherDate;
 
 	// Error validation elements
@@ -114,7 +114,7 @@ public class RaiseContributionRequestPage extends AndroidAction {
 	public void selectRandomDate() throws InterruptedException {
 		selectDate.click();
 		Thread.sleep(2000);
-		otherDate.click();
+		//otherDate.click();
 		okButton.click();
 	}
 	
@@ -134,7 +134,7 @@ public class RaiseContributionRequestPage extends AndroidAction {
 			String timeSlotList=list.getText();
 			System.out.println("timeeeeeeeeeeeee" +timeSlotList);			
 		}
-		timeSlot.get(2).click();
+		timeSlot.get(0).click();
 		scrollToText("Confirm pickup");
 		instructions.sendKeys("Testing ecocrew instruction");
 		

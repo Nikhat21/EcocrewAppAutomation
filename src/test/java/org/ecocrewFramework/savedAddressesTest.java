@@ -3,7 +3,7 @@ import org.ecocrew.pageobject.android.AddAddressPage;
 import org.ecocrew.pageobject.android.EditAddressPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.RaisePickupRequestPage;
-import org.ecocrewFramework.BaseTest;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -28,8 +28,8 @@ public class savedAddressesTest extends BaseTest{
 
 		raiseRequest=new RaisePickupRequestPage(driver);		
 		raiseRequest.createOrder();
-		raiseRequest.openCameraNewUser();
-        
+		//raiseRequest.openCameraNewUser();
+		raiseRequest.mobCamera();
 		Thread.sleep(2000);
 
 		editaddress =new EditAddressPage(driver);
@@ -52,7 +52,7 @@ public class savedAddressesTest extends BaseTest{
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"8197125150", "1234"}};
+		return new Object[][] { {"5584920917", "1234"}};
 	}
 
 	

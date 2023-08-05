@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">EcocrewUserApp Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 26, 2023 11:57:47 AM</span></a>
+<a href="#"><span class="badge badge-primary">Jul 29, 2023 11:29:32 AM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,39 +80,104 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">loginCompleteProfile</p>
             <p class="text-sm">
-              <span>11:58:03 AM</span> / <span>00:00:55:772</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>11:29:46 AM</span> / <span>00:01:09:716</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">loginCompleteProfile</h5>
-<span class='badge badge-success'>07.26.2023 11:58:03 AM</span>
-<span class='badge badge-danger'>07.26.2023 11:58:59 AM</span>
-<span class='badge badge-default'>00:00:55:772</span>
+<h5 class="test-status text-fail">loginCompleteProfile</h5>
+<span class='badge badge-success'>07.29.2023 11:29:46 AM</span>
+<span class='badge badge-danger'>07.29.2023 11:30:56 AM</span>
+<span class='badge badge-default'>00:01:09:716</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
-</div><div class="detail-body mt-4">
+</div>    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='D:\automationProjects//reportsloginCompleteProfile.png' src="D:\automationProjects//reportsloginCompleteProfile.png">
+    <div class="title">loginCompleteProfile</div>
+    </div></div>
+<div class="detail-body mt-4">
 <table class="table table-sm">
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:58:59 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>11:30:51 AM</td>
         <td>
-          Test Passed
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: Can't locate an element by this strategy: By.chained({By.xpath: //android.widget.Button[@content-desc='OK']})
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:125)
+	at io.appium.java_client.pagefactory.interceptors.InterceptorOfASingleElement.intercept(InterceptorOfASingleElement.java:59)
+	at org.openqa.selenium.remote.RemoteWebElement$$EnhancerByCGLIB$$d27c0df4.click(<generated>)
+	at org.ecocrew.pageobject.android.ProfilePage.updateProfile(ProfilePage.java:135)
+	at org.ecocrewFramework.NewUserLoginCompleteProfileTest.loginCompleteProfile(NewUserLoginCompleteProfileTest.java:38)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@a2341c6 (tried for 1 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:262)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:98)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.findElement(AppiumElementLocator.java:118)
+	... 32 more
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.chained({By.xpath: //android.widget.Button[@content-desc='OK']})
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: driver.version: RemoteWebDriver
+	at io.appium.java_client.pagefactory.bys.builder.ByChained.findElement(ByChained.java:77)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at io.appium.java_client.pagefactory.bys.ContentMappedBy.findElement(ContentMappedBy.java:50)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$1.findElement(ElementLocation.java:139)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at io.appium.java_client.pagefactory.AppiumElementLocator.lambda$findElement$0(AppiumElementLocator.java:119)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:171)
+	at io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction.apply(AppiumElementLocator.java:164)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 34 more
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -119,9 +190,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">loginErrorValidation</p>
+            <p class="name">raisePickupRequest</p>
             <p class="text-sm">
-              <span>11:59:13 AM</span> / <span>00:00:13:306</span>
+              <span>11:31:10 AM</span> / <span>00:01:38:391</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -129,10 +200,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">loginErrorValidation</h5>
-<span class='badge badge-success'>07.26.2023 11:59:13 AM</span>
-<span class='badge badge-danger'>07.26.2023 11:59:26 AM</span>
-<span class='badge badge-default'>00:00:13:306</span>
+<h5 class="test-status text-pass">raisePickupRequest</h5>
+<span class='badge badge-success'>07.29.2023 11:31:10 AM</span>
+<span class='badge badge-danger'>07.29.2023 11:32:49 AM</span>
+<span class='badge badge-default'>00:01:38:391</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -144,7 +215,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:59:26 AM</td>
+        <td>11:32:49 AM</td>
         <td>
           Test Passed
         </td>
@@ -159,9 +230,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">registerYourBusiness</p>
+            <p class="name">loginErrorValidation</p>
             <p class="text-sm">
-              <span>11:59:38 AM</span> / <span>00:01:21:657</span>
+              <span>11:33:01 AM</span> / <span>00:00:12:885</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -169,10 +240,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">registerYourBusiness</h5>
-<span class='badge badge-success'>07.26.2023 11:59:38 AM</span>
-<span class='badge badge-danger'>07.26.2023 12:01:00 PM</span>
-<span class='badge badge-default'>00:01:21:657</span>
+<h5 class="test-status text-pass">loginErrorValidation</h5>
+<span class='badge badge-success'>07.29.2023 11:33:01 AM</span>
+<span class='badge badge-danger'>07.29.2023 11:33:14 AM</span>
+<span class='badge badge-default'>00:00:12:885</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -184,7 +255,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>12:01:00 PM</td>
+        <td>11:33:14 AM</td>
         <td>
           Test Passed
         </td>
@@ -199,9 +270,9 @@
           tag=""
           device="">
           <div class="test-detail">
-            <p class="name">raisePickupRequest</p>
+            <p class="name">registerYourBusiness</p>
             <p class="text-sm">
-              <span>12:01:13 PM</span> / <span>00:01:39:962</span>
+              <span>11:33:26 AM</span> / <span>00:01:15:436</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -209,10 +280,10 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">raisePickupRequest</h5>
-<span class='badge badge-success'>07.26.2023 12:01:13 PM</span>
-<span class='badge badge-danger'>07.26.2023 12:02:53 PM</span>
-<span class='badge badge-default'>00:01:39:962</span>
+<h5 class="test-status text-pass">registerYourBusiness</h5>
+<span class='badge badge-success'>07.29.2023 11:33:26 AM</span>
+<span class='badge badge-danger'>07.29.2023 11:34:41 AM</span>
+<span class='badge badge-default'>00:01:15:436</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -224,7 +295,47 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>12:02:53 PM</td>
+        <td>11:34:41 AM</td>
+        <td>
+          Test Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">completeProfile</p>
+            <p class="text-sm">
+              <span>11:34:53 AM</span> / <span>00:00:49:565</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">completeProfile</h5>
+<span class='badge badge-success'>07.29.2023 11:34:53 AM</span>
+<span class='badge badge-danger'>07.29.2023 11:35:43 AM</span>
+<span class='badge badge-default'>00:00:49:565</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>11:35:43 AM</td>
         <td>
           Test Passed
         </td>
@@ -243,18 +354,67 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>11:29:46 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>loginCompleteProfile</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 26, 2023 11:57:47 AM</h3>
+<h3>Jul 29, 2023 11:29:32 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 26, 2023 12:02:54 PM</h3>
+<h3>Jul 29, 2023 11:35:44 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -266,7 +426,7 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -282,12 +442,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
+<div><small data-tooltip='80%'>
 <b>4</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='20%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -305,9 +465,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>4</b> events passed</small></div>
+<div><small data-tooltip='80%'><b>4</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
+<small data-tooltip='20%'><b>1</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -324,7 +484,7 @@
 </div></div>
 <script>
 var timeline = {
-"loginCompleteProfile":55.772,"loginErrorValidation":13.306,"registerYourBusiness":81.657,"raisePickupRequest":99.962
+"loginCompleteProfile":69.716,"raisePickupRequest":98.391,"loginErrorValidation":12.885,"registerYourBusiness":75.436,"completeProfile":49.565
 };
 </script>
 <div class="row">
@@ -348,7 +508,7 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 4,
-failParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -365,7 +525,7 @@ skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 passEvents: 4,
-failEvents: 0,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0

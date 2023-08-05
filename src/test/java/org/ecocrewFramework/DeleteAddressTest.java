@@ -9,6 +9,7 @@ import org.ecocrew.pageobject.android.DeleteAddressPage;
 import org.ecocrew.pageobject.android.EditAddressPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.RaisePickupRequestPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -34,8 +35,8 @@ public class DeleteAddressTest extends BaseTest{
 		loginPage.verifyOTP(OTP);
 		raiseRequest=new RaisePickupRequestPage(driver);		
 		raiseRequest.createOrder();
-		raiseRequest.openCameraNewUser();
-		
+		//raiseRequest.openCameraNewUser();
+		raiseRequest.mobCamera();
 		
 		editaddress=new EditAddressPage(driver);
 		editaddress.addressChange();
@@ -44,15 +45,15 @@ public class DeleteAddressTest extends BaseTest{
 		//addAddress.pickupAddresss();
 		
 		deleteAddress=new DeleteAddressPage(driver);
-		deleteAddress.deleteButton("Work");
-		deleteAddress.confirmDelete();	
+		deleteAddress.deleteButton("Other");
+		//deleteAddress.confirmDelete();	
 		
 	}
 	
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"8197125150", "1234"}};
+		return new Object[][] { {"5584920917", "1234"}};
 	}
 	
 	

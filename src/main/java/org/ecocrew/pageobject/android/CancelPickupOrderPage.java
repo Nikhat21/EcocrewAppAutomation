@@ -26,7 +26,7 @@ AndroidDriver driver;
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.PickupDetailCancelPickupButton']")
 	private WebElement cancelOrder;
 	
-	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='ecocrew.CancelViewOnCancel']")
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.CancelViewOnCancel']")
 	private WebElement cancelViewOn;
 	
 	@AndroidFindBy(id = "ecocrew.CancelViewOnDontCancel")
@@ -52,6 +52,7 @@ AndroidDriver driver;
 	public void cancelPickupOrder() {
 		scrollToText("Cancel pickup");
 		cancelOrder.click();
+		cancelViewOn.click();
 	}
 	
 	

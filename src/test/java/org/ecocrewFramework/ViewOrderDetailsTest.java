@@ -4,6 +4,7 @@ import org.ecocrew.pageobject.android.CancelPickupOrderPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.RaiseContributionRequestPage;
 import org.ecocrew.pageobject.android.viewOrderDetailsPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

@@ -92,6 +92,10 @@ public class EditAddressPage extends AddAddressPage{
 	}
 	
 	
+	public void addNewAddressLink() {
+		addNewAddress.click();
+	}
+	
 	
 //	public void addressTags() {
 //		for(WebElement tags : pickupAddressAddressTag) {

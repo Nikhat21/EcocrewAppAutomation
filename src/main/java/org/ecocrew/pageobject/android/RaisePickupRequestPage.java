@@ -87,6 +87,11 @@ public class RaisePickupRequestPage extends AndroidAction{
 		mobilecameraDone.click();
 	}
 	
+	public void mobCamerauser() throws InterruptedException {
+		mobilecamera.click();
+		Thread.sleep(2000);
+		mobilecameraDone.click();
+	}
 	
 	public void openCameraExistingUser() throws InterruptedException {
 		galleryAllowButton.click();

@@ -52,6 +52,9 @@ AndroidDriver driver;
 	@AndroidFindBy(xpath = "//android.view.View[@content-desc='My Referrals']/android.view.ViewGroup/android.view.ViewGroup/android.view.View")
 	private WebElement MyReferrals;
 	
+	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.AccountScreenRegister as a business']")
+	private WebElement registerasbusiness;
+	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.AccountScreenLog out']")
 	private WebElement logout;
 	
@@ -114,6 +117,13 @@ AndroidDriver driver;
 //		MyReferrals.click();
 		
 	}
+	
+	public void registerAsABusiness() {
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Register as a business\").instance(0));"));
+		//scrollToText("Register as a business");
+		registerasbusiness.click();
+	}
+	
 	
 	public void  scroll() {
 		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\"Log out\").instance(0));"));

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import org.ecocrew.pageobject.android.B2BOrderPage;
 import org.ecocrew.pageobject.android.B2BRecurringOrderPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -35,6 +36,8 @@ public class B2BOrderRecurringTest extends BaseTest{
 		
 		b2bRecurringOrder.repeatEvery(repeat);
 		String userSelectedTime=b2bRecurringOrder.selectTimeSlot();
+		Thread.sleep(2000);
+		System.out.println(payment);
 		String userSelectedPayment=b2bRecurringOrder.moneyMode(payment);
 		
 		b2bRecurringOrder.confirm();
@@ -68,7 +71,9 @@ public class B2BOrderRecurringTest extends BaseTest{
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"7142425093" , "1234" , "Everyday" , "Google Pay"} };
+		return new Object[][] { {"7142425093" , "1234" , "Everyday" , "Cash"} };
 	}
+	
+	//Everyday,Every 2nd day,Weekly on Saturday and Tuesday,Weekly on Saturday,Once in 2 weeks
 	
 }

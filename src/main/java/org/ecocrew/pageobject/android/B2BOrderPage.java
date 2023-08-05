@@ -34,8 +34,6 @@ public class B2BOrderPage {
 	private WebElement b2bpickupRequest;
 	
 	
-	
-	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BRaiseOneTimePickupRequest']")
 	private WebElement b2bOneTimepickupRequest;
 	
@@ -50,7 +48,7 @@ public class B2BOrderPage {
 	private WebElement okButton;
 	
 	
-	@AndroidFindBy(xpath = "//android.view.View[@content-desc='24 July 2023']")
+	@AndroidFindBy(xpath = "//android.view.View[@content-desc='29 July 2023']")
 	private WebElement selectDate;
 	
 	
@@ -85,9 +83,6 @@ public class B2BOrderPage {
 	private WebElement viewOrderDetailsText;
 	
 	
-	
-	
-	
 	@AndroidFindBy(xpath = "//android.widget.Button[@content-desc='ecocrew.B2BOrderDetailsEditPickup']")
 	private WebElement editPickup;
 	
@@ -102,6 +97,12 @@ public class B2BOrderPage {
 	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.B2BOneTimePickupShowDatePicker']")
 	private WebElement editDate;
+	
+	
+	
+	//android.view.ViewGroup[@content-desc="ecocrew.B2BOneTimeOrderSelectMoneyAcceptance"]
+	
+	
 	
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.CancelViewOnCancel']")
 	private WebElement cancelViewOnCancel;
@@ -160,6 +161,29 @@ public class B2BOrderPage {
 	
 	public void backToHome() {
 		confirmedBackToHome.click();
+	}
+	
+	
+	
+	public void editPickupButton() {
+		editPickup.click();
+		editProceed.click();
+	}
+	
+	
+	public void dateEdit() {
+		editDate.click();
+	}
+	
+	public void editPayment() {
+		selectMoneyMode.click();
+		selectPaymentMode.get(2).click();
+	}
+	
+	
+	public void cancel() {
+		cancelPickup.click();
+		cancelViewOnCancel.click();
 	}
 	
 }

@@ -2,6 +2,7 @@ package org.ecocrewFramework;
 
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.ProfilePage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -26,7 +27,7 @@ public class ErrorValidationTest extends BaseTest {
 		driver.startActivity(activity);	
 	}
 	
-	@Test(dataProvider="getData" ,groups= {"Smoke"})
+	@Test(dataProvider="getData" ,groups= {"Smoke"},priority = 1)
 	public void loginErrorValidation(String MobileNumber ) {
 		// String MobileNumber = "81971250";
 
@@ -42,7 +43,7 @@ public class ErrorValidationTest extends BaseTest {
 		return new Object[][] { {"8197120"}};
 	}
 	 
-	 @Test
+	 @Test(priority = 2)
 	 public void otpErrorValidation() throws InterruptedException {
 		 Thread.sleep(2000);
 		 String mobileNumber = "8197125150";
@@ -58,10 +59,10 @@ public class ErrorValidationTest extends BaseTest {
 	 }
 	 
 	 
-	 @Test
+	 @Test(priority = 3)
 	 public void profileScreenValidation() throws InterruptedException {
 		 Thread.sleep(2000);
-		 String mobileNumber = "8197125150";
+		 String mobileNumber = "5584920917";
 		 String verifyOTP="1234";
 		 loginPage = new NewUserLoginPage(driver);
 		 loginPage.inputField(mobileNumber);
@@ -76,22 +77,23 @@ public class ErrorValidationTest extends BaseTest {
 		Assert.assertEquals("Please enter valid name", profilepage.getFullnameErrorMessage());
 	 }
 	 
-//	 @Test
-//	 public void completeYourProfileValidation() throws InterruptedException {
+	 @Test(priority = 4)
+	 public void completeYourProfileValidation() throws InterruptedException {
 //		 Thread.sleep(2000);
-//		 String mobileNumber = "8197125150";
+//		 String mobileNumber = "5584920917";
 //		 String verifyOTP="1234";
 //		 loginPage = new NewUserLoginPage(driver);
+//		 loginPage.welcomeScreens();
 //		 loginPage.inputField(mobileNumber);
 //		 loginPage.verifyOTP(verifyOTP);
 //		//loginPage.surveyScreen();
 //		 Thread.sleep(2000);
-//         profilepage=new ProfilePage(driver);
-//         profilepage.completeProfileHome();	
-//		 profilepage.updateProfile("user","user2@g");
-//		 profilepage.saveChangesProfile();
-//		Assert.assertEquals("Please enter valid name", profilepage.getFullnameErrorMessage());
-//	 }
-//	 
+         profilepage=new ProfilePage(driver);
+         profilepage.completeProfileHome();	
+		 profilepage.updateProfile("","user2@gmail");
+		 profilepage.saveChangesProfile();
+		Assert.assertEquals("Please enter valid name", profilepage.getFullnameErrorMessage());
+	 }
+	 
 		 
 }

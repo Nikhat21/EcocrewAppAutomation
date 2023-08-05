@@ -58,7 +58,8 @@ public class DeleteAddressPage extends AddAddressPage {
 	      	  Thread.sleep(3000);
 	      	  if(label.equals(tabs)) {
 	      		  Thread.sleep(3000);
-	      		addressDeleteIcon.get(i).click();	      
+	      		addressDeleteIcon.get(i).click();	
+	      		confirmDeleteButton.click();
 	      		System.out.println("Deleted successfully");
 	      	  }else {
 	      		  System.out.println("Address  not deleted ");

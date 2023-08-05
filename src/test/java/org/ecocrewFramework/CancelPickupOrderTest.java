@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.ecocrew.pageobject.android.CancelPickupOrderPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,7 +14,7 @@ public class CancelPickupOrderTest extends BaseTest{
 	NewUserLoginPage loginPage;
 	CancelPickupOrderPage cancelPickupOrder;
 	
-	@Test(dataProvider="getData")
+	@Test(dataProvider="getData",groups= {"Smoke"})
 	public void CancelPickupOrder(HashMap<String,String> input) throws InterruptedException {
 		loginPage=new NewUserLoginPage(driver);
 		loginPage.welcomeScreens();
@@ -23,7 +24,7 @@ public class CancelPickupOrderTest extends BaseTest{
 		cancelPickupOrder=new CancelPickupOrderPage(driver);
 		cancelPickupOrder.viewOrderDetailsLink();
 		cancelPickupOrder.cancelPickupOrder();
-		cancelPickupOrder.cancelViewOnButton();
+		//cancelPickupOrder.cancelViewOnButton();
 		cancelPickupOrder.reasonForCancellation();
 		cancelPickupOrder.submitButton();
 		

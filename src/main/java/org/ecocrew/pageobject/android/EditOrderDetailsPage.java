@@ -31,7 +31,7 @@ AndroidDriver driver;
 	@AndroidFindBy(xpath = "//android.view.ViewGroup[@content-desc='ecocrew.ScrapDetailsShowDatePicker']")
 	private WebElement editDatepicker;
 	
-	@AndroidFindBy(xpath = "//android.view.View[@content-desc='12 July 2023']")
+	@AndroidFindBy(xpath = "//android.view.View[@content-desc='02 August 2023']")
 	private WebElement otherDate;
 
 	@AndroidFindBy(id = "android:id/button1")
@@ -78,7 +78,7 @@ AndroidDriver driver;
 	}
 	
 	public void pickTimeSlot() {
-		editTimeSlotdropdown.get(1).click();
+		editTimeSlotdropdown.get(0).click();
 	}
 	public void enterInstruction() {
 		editInstruction.sendKeys("testgkkn");

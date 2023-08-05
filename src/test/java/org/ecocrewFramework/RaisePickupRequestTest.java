@@ -11,6 +11,7 @@ import org.ecocrew.pageobject.android.CancelPickupOrderPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.RaisePickupRequestPage;
 import org.ecocrew.pageobject.android.viewOrderDetailsPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.ecocrew.pageobject.android.RaiseContributionRequestPage;
 
 import org.openqa.selenium.By;
@@ -23,7 +24,7 @@ public class RaisePickupRequestTest extends BaseTest {
 	RaiseContributionRequestPage raisecontribution;
 	CancelPickupOrderPage cancelPickupOrder;
 	viewOrderDetailsPage vieworderdetails;
-	 AddAddressPage addAddress;
+	AddAddressPage addAddress;
 	 
 	 
 	@Test(dataProvider="getData" , groups= {"Smoke"})
@@ -56,6 +57,7 @@ public class RaisePickupRequestTest extends BaseTest {
 		addAddress = new AddAddressPage(driver);
 		addAddress.pickupAddresss();
 		addAddress.newPickupAddress("dlf","Test");	
+		addAddress.confirmAddress();
 		
 		String raiseaddress=addAddress.getpickupAddress();
 		String raiseaddressContent=addAddress.getpickupAddressContent();
@@ -110,6 +112,6 @@ public class RaisePickupRequestTest extends BaseTest {
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"7184520714", "1234"}};
+		return new Object[][] { {"8791555551", "1234"}};
 	}
 }

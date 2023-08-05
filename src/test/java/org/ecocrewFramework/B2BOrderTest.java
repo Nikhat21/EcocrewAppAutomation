@@ -2,6 +2,7 @@ package org.ecocrewFramework;
 
 import org.ecocrew.pageobject.android.B2BOrderPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -18,7 +19,7 @@ public class B2BOrderTest extends BaseTest{
 		loginPage.verifyOTP(otp);
 		
 		b2border=new B2BOrderPage(driver);
-		//b2border.viewLink();
+		b2border.viewLink();
 		b2border.switchProfileLink();
 		b2border.b2bOrder();
 		b2border.oneTime();
@@ -31,7 +32,7 @@ public class B2BOrderTest extends BaseTest{
 	
 	@DataProvider
 	public Object[][] getData(){
-		return new Object[][] { {"8197125150" , "1234"} };
+		return new Object[][] { {"8282828248" , "1234"} };
 	}
 	
 }

@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.ProfilePage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.openqa.selenium.By;
 
 
@@ -61,7 +62,7 @@ public class NewUserLoginCompleteProfileTest extends BaseTest{
 		
 	@DataProvider
 	public Object[][] getDataCompleteProfile(){
-		return new Object[][] { {"9142787222" , "1234"} };
+		return new Object[][] { {"4372710122" , "1234"} };
 	}
 	
 

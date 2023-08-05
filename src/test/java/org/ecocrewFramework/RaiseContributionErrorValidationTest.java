@@ -4,6 +4,7 @@ import org.ecocrew.pageobject.android.AddAddressPage;
 import org.ecocrew.pageobject.android.NewUserLoginPage;
 import org.ecocrew.pageobject.android.RaiseContributionRequestPage;
 import org.ecocrew.pageobject.android.RaisePickupRequestPage;
+import org.ecocrewFramework.TestUtils.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
